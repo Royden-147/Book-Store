@@ -1,0 +1,4 @@
+front end\:
+react-router-dom
+redux
+react-icons

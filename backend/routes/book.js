@@ -62,7 +62,7 @@ router.delete("/delete-book", authenticateToken, async (req,res) => {
 });
 
 //get all books
-router.get("/get-all-books", authenticateToken, async (req,res) => {
+router.get("/get-all-books", async (req,res) => {
     try {
         const books = await Book.find().sort({ createdAt: -1 });
     return res.json({
@@ -76,7 +76,7 @@ router.get("/get-all-books", authenticateToken, async (req,res) => {
 });
 
 //get 4 recent four books
-router.get("/get-recent-books", authenticateToken, async (req,res) => {
+router.get("/get-recent-books", async (req,res) => {
     try {
         const books = await Book.find().sort({ createdAt: -1 }).limit(4);
     return res.json({
